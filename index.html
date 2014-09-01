@@ -18,15 +18,8 @@
 	<div class="container">
 		<div class="header">
 			<div ng-controller="NavController">
-				<ul class="nav nav-pills pull-left">
-					<li ng-class="{ active: route.current.activeTab === 'main' }"><a ng-href="#">Home</a></li>
-					<li ng-class="{ active: route.current.activeTab === 'about' }"><a ng-href="#/about">About</a></li>
-				</ul>
-				<h3 class="text-muted">urizaAngular</h3>
+				<div ng-include="'views/nav.html'"></div>
 			</div>
-		</div>
-		<div class="row">
-
 		</div>
 
 		<div ng-view=""></div>
