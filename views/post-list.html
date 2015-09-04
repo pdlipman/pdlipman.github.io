@@ -1,8 +1,5 @@
-<markdown>
-# Posts
-</markdown>
-<div ng-repeat="post in posts | orderBy:'datestamp':true">
-    {{ post.title }}
-    <a ng-href="#/posts/{{ post.file }}">test</a>
-    <markdown ng-include="'posts/files/' + post.file"> </markdown>
+<div ng-repeat="post in posts | orderBy:'timestamp':true">
+	<a ng-href="#/posts/{{ post.id }}"><h3>{{ post.title }}</h3></a>
+	{{ post.timestamp | date:'MMM d, y' }}
+	<span ng-repeat="tag in post.tags">{{ tag }}</span>
 </div>
