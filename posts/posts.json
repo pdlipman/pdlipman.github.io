@@ -4,7 +4,7 @@
     "title": "Creating a markdown blog using AngularJS",
     "slug": "creating-a-markdown-blog-using-angular-js",
     "file": "creating-a-markdown-blog-using-angular-js.md",
-    "datestamp": "2014-08-31",
+    "timestamp": "2014-08-31",
     "tags": [
         {"title": "Javascript"},
         {"title": "AngularJS"}
@@ -15,7 +15,7 @@
       "title": "Creating a markdown blog using AngularJS: Part 2",
       "slug": "creating-a-markdown-blog-using-angular-js-part-2",
       "file": "creating-a-markdown-blog-using-angular-js-part-2.md",
-      "datestamp": "2014-09-02",
+      "timestamp": "2014-09-02",
       "tags": [
           {"title": "Javascript"},
           {"title": "AngularJS"}
