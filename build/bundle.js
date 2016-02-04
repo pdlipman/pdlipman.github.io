@@ -229,7 +229,6 @@ World.prototype = {
 
         for (var y = 0; y < map.layers[0].data.length; y++) {
             for (var x = 0; x < map.layers[0].data[y].length; x++) {
-                console.log('x: ' + x + ' y: ' + y + ' value: ' + map.layers[0].data[y][x].index);
                 if (map.layers[0].data[y][x].index !== 0) {
                     if (x < minX) {
                         minX = x;
@@ -240,10 +239,6 @@ World.prototype = {
                 }
             }
         }
-
-        console.log('x: ' + minX + ' y: ' + maxY);
-        console.log(map.layers[0].data.length);
-        console.log(map.layers[0].data[0].length);
 
         player = this.game.add.sprite(minX * 64 + 32, maxY * 64 + 32, 'dude');
         this.physics.arcade.enable(player);
