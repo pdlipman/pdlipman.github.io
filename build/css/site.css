@@ -6769,6 +6769,10 @@ html, body {
 
 .main-transition-enter.main-transition-enter-active {
   opacity: 1;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in; }
 
 .main-transition-leave {
@@ -6776,6 +6780,10 @@ html, body {
 
 .main-transition-leave.main-transition-leave-active {
   opacity: 0.01;
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  -o-transition: opacity 300ms ease-in;
+  -ms-transition: opacity 300ms ease-in;
   transition: opacity 300ms ease-in; }
 
 .main-transition-appear {
@@ -6783,6 +6791,10 @@ html, body {
 
 .main-transition-appear.main-transition-appear-active {
   opacity: 1;
+  -webkit-transition: opacity .5s ease-in;
+  -moz-transition: opacity .5s ease-in;
+  -o-transition: opacity .5s ease-in;
+  -ms-transition: opacity .5s ease-in;
   transition: opacity .5s ease-in; }
 
 .card-start {
