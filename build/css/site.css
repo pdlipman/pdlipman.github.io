@@ -6885,6 +6885,10 @@ html, body {
   margin: 20px;
   cursor: pointer;
   font-size: 1.4em;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   z-index: 1; }
 
@@ -6904,6 +6908,10 @@ html, body {
   left: 0px;
   top: calc(100% - 50px);
   left: 50px;
+  -webkit-transition: all .8s ease-in-out;
+  -moz-transition: all .8s ease-in-out;
+  -o-transition: all .8s ease-in-out;
+  -ms-transition: all .8s ease-in-out;
   transition: all .8s ease-in-out;
   font-weight: bold; }
 
@@ -6911,6 +6919,10 @@ html, body {
   z-index: 0;
   top: 15px;
   left: 70px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   color: white; }
 
