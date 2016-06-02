@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-const React = require('react');
-const ReactDOM = require('react-dom');
-const FontAwesome = require('react-fontawesome');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var FontAwesome = require('react-fontawesome');
 class Card extends React.Component {
 
     constructor(props) {
@@ -34,14 +34,14 @@ class Card extends React.Component {
     }
 
     setPosition() {
-        const refCard = this.refs.card;
-        const node = ReactDOM.findDOMNode(refCard);
-        const content = jQuery('#content'); // eslint-disable-line
+        var refCard = this.refs.card;
+        var node = ReactDOM.findDOMNode(refCard);
+        var content = jQuery('#content'); // eslint-disable-line
 
-        const top = content.offset().top - jQuery(window).scrollTop() - // eslint-disable-line
+        var top = content.offset().top - jQuery(window).scrollTop() - // eslint-disable-line
         node.getBoundingClientRect().top;
 
-        const left = content.offset().left - node.getBoundingClientRect().left;
+        var left = content.offset().left - node.getBoundingClientRect().left;
 
         this.setState({
             dx: top,
@@ -68,22 +68,22 @@ class Card extends React.Component {
     }
 
     render() {
-        const classes = this.state.expand ? 'card-start card-end ' // + this.state.columnClass
+        var classes = this.state.expand ? 'card-start card-end ' // + this.state.columnClass
         : 'card-start '; // + this.state.columnClass;
 
-        const cardHolderStyle = {
+        var cardHolderStyle = {
             //width: this.state.width,
             height: this.state.height
         };
 
-        const heroImage = this.state.heroImage ? this.state.heroImage : '';
+        var heroImage = this.state.heroImage ? this.state.heroImage : '';
 
-        let divStyle = {
+        var divStyle = {
             //width: this.state.width,
             height: this.state.height
         };
 
-        let closeStyle = {
+        var closeStyle = {
             display: 'none'
         };
 
@@ -206,15 +206,15 @@ module.exports = Card;
  * Created by philiplipman on 2/23/16.
  */
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+var React = require('react');
+var ReactDOM = require('react-dom');
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
-const Router = require('react-router').Router;
-const Route = require('react-router').Route;
-const IndexRoute = require('react-router').IndexRoute;
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var IndexRoute = require('react-router').IndexRoute;
 
-const Card = require('./components/card/card.jsx');
+var Card = require('./components/card/card.jsx');
 
 global.jQuery = require('jquery');
 
@@ -233,14 +233,10 @@ class App extends React.Component {
                     transitionLeaveTimeout: 300
                 },
                 React.createElement(
-                    'h1',
-                    null,
-                    'hello world'
-                ),
-                React.createElement(
                     'div',
                     {
-                        className: 'cover-container' },
+                        className: 'cover-container'
+                    },
                     this.props.children
                 )
             )
@@ -252,11 +248,6 @@ function Deck() {
     return React.createElement(
         'div',
         null,
-        React.createElement(
-            'h1',
-            null,
-            'hello world2'
-        ),
         React.createElement(
             'div',
             { className: 'row' },
@@ -292,11 +283,6 @@ function Deck() {
                     )
                 )
             )
-        ),
-        React.createElement(
-            'h1',
-            null,
-            'hello world3'
         ),
         React.createElement(
             'div',
@@ -341,31 +327,23 @@ function Index() {
     );
 }
 
-const Game = new React.createClass({
+var Game = new React.createClass({
     render: function () {
         return React.createElement(GameMain, null);
     }
 });
 
-const Test = new React.createClass({
-    render: function () {
-        return React.createElement(
-            'div',
-            null,
-            'Reactjs TEST'
-        );
-    }
-});
-
-ReactDOM.render(React.createElement(Test, null)
-//<Router>
-//    <Route path="/" component={App}>
-//        <IndexRoute component={Deck}/>
-//        <Route path="game" component={Game}/>
-//        <Route path="*" component={Deck}/>
-//    </Route>
-//</Router>
-, document.getElementById('content'));
+ReactDOM.render(React.createElement(
+    Router,
+    null,
+    React.createElement(
+        Route,
+        { path: '/', component: App },
+        React.createElement(IndexRoute, { component: Deck }),
+        React.createElement(Route, { path: 'game', component: Game }),
+        React.createElement(Route, { path: '*', component: Deck })
+    )
+), document.getElementById('content'));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./components/card/card.jsx":1,"jquery":51,"react":214,"react-addons-css-transition-group":54,"react-dom":55,"react-router":76}],3:[function(require,module,exports){
