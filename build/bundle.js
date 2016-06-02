@@ -254,7 +254,7 @@ function Deck() {
             React.createElement(
                 Card,
                 {
-                    columnClass: 'col-sm-12',
+                    columnClass: 'col-lg-12',
                     heroImage: 'url(./app/assets/profile.jpg)',
                     heroImagePadding: 400,
                     title: 'About'
@@ -290,7 +290,7 @@ function Deck() {
             React.createElement(
                 Card,
                 {
-                    columnClass: 'col-sm-6',
+                    columnClass: 'col-lg-6',
                     height: 440,
                     heroImage: 'url(./app/assets/octopus.jpg)',
                     heroImagePadding: 400,
@@ -301,7 +301,7 @@ function Deck() {
             React.createElement(
                 Card,
                 {
-                    columnClass: 'col-sm-6',
+                    columnClass: 'col-lg-6',
                     height: 440,
                     heroImage: 'url(./app/assets/knight.jpg)',
                     heroImagePadding: 400,
