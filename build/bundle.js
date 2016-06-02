@@ -347,17 +347,15 @@ const Game = new React.createClass({
     }
 });
 
-ReactDOM.render(React.createElement(
-    Router,
-    null,
-    React.createElement(
-        Route,
-        { path: '/', component: App },
-        React.createElement(IndexRoute, { component: Deck }),
-        React.createElement(Route, { path: 'game', component: Game }),
-        React.createElement(Route, { path: '*', component: Deck })
-    )
-), document.getElementById('content'));
+ReactDOM.render(React.createElement(App, null)
+//<Router>
+//    <Route path="/" component={App}>
+//        <IndexRoute component={Deck}/>
+//        <Route path="game" component={Game}/>
+//        <Route path="*" component={Deck}/>
+//    </Route>
+//</Router>
+, document.getElementById('content'));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./components/card/card.jsx":1,"jquery":51,"react":214,"react-addons-css-transition-group":54,"react-dom":55,"react-router":76}],3:[function(require,module,exports){
