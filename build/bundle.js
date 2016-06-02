@@ -233,6 +233,11 @@ class App extends React.Component {
                     transitionLeaveTimeout: 300
                 },
                 React.createElement(
+                    'h1',
+                    null,
+                    'hello world'
+                ),
+                React.createElement(
                     'div',
                     {
                         className: 'cover-container' },
@@ -247,6 +252,11 @@ function Deck() {
     return React.createElement(
         'div',
         null,
+        React.createElement(
+            'h1',
+            null,
+            'hello world2'
+        ),
         React.createElement(
             'div',
             { className: 'row' },
@@ -282,6 +292,11 @@ function Deck() {
                     )
                 )
             )
+        ),
+        React.createElement(
+            'h1',
+            null,
+            'hello world3'
         ),
         React.createElement(
             'div',
