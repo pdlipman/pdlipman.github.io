@@ -347,7 +347,17 @@ const Game = new React.createClass({
     }
 });
 
-ReactDOM.render(React.createElement(App, null)
+const Test = new React.createClass({
+    render: function () {
+        return React.createElement(
+            'div',
+            null,
+            'Reactjs TEST'
+        );
+    }
+});
+
+ReactDOM.render(React.createElement(Test, null)
 //<Router>
 //    <Route path="/" component={App}>
 //        <IndexRoute component={Deck}/>
