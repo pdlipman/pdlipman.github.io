@@ -16,7 +16,8 @@ class Card extends React.Component {
             expandedHeight: props.expandedHeight,
             heroImage: props.heroImage,
             heroImagePadding: props.heroImagePadding,
-            title: props.title
+            title: props.title,
+            backgroundColor: props.backgroundColor
         };
 
         this.handleExpand = this.handleExpand.bind(this);
@@ -61,6 +62,9 @@ class Card extends React.Component {
 
     handleContract() {
         if (this.state.expand) {
+            var refCard = this.refs.card;
+            var node = ReactDOM.findDOMNode(refCard);
+            jQuery(node).find('.card-content').animate({ scrollTop: 0 }, "fast");
             this.setState({
                 expand: false
             });
@@ -68,19 +72,21 @@ class Card extends React.Component {
     }
 
     render() {
+
+        var titlePadding = this.props.height < this.props.heroImagePadding || this.props.hideContent ? { paddingTop: '10' } : { paddingTop: this.props.heroImagePadding };
+        var cardHolderStyle = {
+            height: this.props.height
+        };
+
+        var contentHideClass = this.props.hideContent ? 'card-interior card-interior-fade' : 'card-interior';
+
         var classes = this.state.expand ? 'card-start card-end ' // + this.state.columnClass
         : 'card-start '; // + this.state.columnClass;
 
-        var cardHolderStyle = {
-            //width: this.state.width,
-            height: this.state.height
-        };
-
-        var heroImage = this.state.heroImage ? this.state.heroImage : '';
+        var heroImage = this.props.heroImage ? this.props.heroImage : '';
 
         var divStyle = {
-            //width: this.state.width,
-            height: this.state.height
+            height: this.props.height
         };
 
         var closeStyle = {
@@ -88,6 +94,7 @@ class Card extends React.Component {
         };
 
         if (this.state.expand) {
+            titlePadding = { paddingTop: this.props.heroImagePadding };
             divStyle = {
                 top: this.state.dx,
                 left: this.state.dy,
@@ -102,56 +109,55 @@ class Card extends React.Component {
             'div',
             {
                 style: cardHolderStyle,
-                className: "card-holder " + this.state.columnClass,
-                ref: 'card'
-            },
+                className: "card-holder " + this.props.columnClass,
+                ref: 'card' },
             React.createElement(
                 'div',
                 {
                     style: divStyle,
                     className: classes,
-                    onClick: this.handleExpand
-                },
+                    onClick: this.handleExpand },
                 React.createElement(
                     'div',
                     {
-                        className: "card-content"
-                    },
+                        className: "card-content" },
                     React.createElement('div', {
                         className: 'card-background-image',
                         style: {
                             backgroundImage: heroImage,
                             backgroundRepeat: "no-repeat",
-                            backgroundSize: "100%" }
-                    }),
+                            backgroundSize: "100%",
+                            backgroundColor: this.props.backgroundColor } }),
                     React.createElement(
                         'div',
                         {
                             className: "main-card",
-                            style: { paddingTop: this.state.heroImagePadding }
-                        },
+                            style: { paddingTop: this.props.heroImagePadding } },
                         React.createElement(
                             'div',
                             {
-                                className: "card-close card-text",
-                                onClick: this.handleContract
-                            },
-                            React.createElement(FontAwesome, {
-                                name: 'times',
-                                className: 'fa-border fa-fade' })
-                        ),
-                        React.createElement(
-                            'h1',
-                            { className: 'cover-heading' },
-                            this.props.title
+                                className: 'cover-heading',
+                                style: titlePadding },
+                            React.createElement(
+                                'h3',
+                                null,
+                                this.props.title
+                            )
                         ),
                         React.createElement(
                             'div',
-                            { className: 'card-interior' },
+                            { className: contentHideClass,
+                                style: { backgroundColor: this.props.backgroundColor } },
                             React.createElement(
                                 'div',
-                                { className: 'card-block'
-                                },
+                                {
+                                    className: "card-close" },
+                                React.createElement('i', { className: 'fa fa-times-circle fa-fade',
+                                    onClick: this.handleContract })
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'card-block' },
                                 React.createElement(
                                     'div',
                                     { className: 'card-text' },
@@ -182,7 +188,9 @@ Card.propTypes = {
     children: React.PropTypes.node,
     heroImage: React.PropTypes.string,
     heroImagePadding: React.PropTypes.number,
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    backgroundColor: React.PropTypes.string,
+    hideContent: React.PropTypes.bool
 };
 
 Card.defaultProps = {
@@ -194,8 +202,10 @@ Card.defaultProps = {
     expandedWidth: 0,
     expandedHeight: 0,
     heroImage: '',
-    heroImagePadding: 60,
-    title: ''
+    heroImagePadding: 0,
+    title: '',
+    backgroundColor: 'white',
+    hideContent: false
 };
 
 module.exports = Card;
@@ -257,7 +267,8 @@ function Deck() {
                     columnClass: 'col-lg-12',
                     heroImage: 'url(./app/assets/profile.jpg)',
                     heroImagePadding: 400,
-                    title: 'About'
+                    title: 'About',
+                    backgroundColor: '#4192D9'
                 },
                 React.createElement(
                     'div',
@@ -293,9 +304,16 @@ function Deck() {
                     columnClass: 'col-lg-6',
                     height: 440,
                     heroImage: 'url(./app/assets/octopus.jpg)',
-                    heroImagePadding: 400,
-                    title: 'Index'
+                    heroImagePadding: 200,
+                    title: 'Index',
+                    backgroundColor: '#00A8E8',
+                    hideContent: true
                 },
+                React.createElement(
+                    'h4',
+                    null,
+                    'Interior Crocidile aliagator, i drive a chevrolet movie theatre'
+                ),
                 React.createElement(Index, null)
             ),
             React.createElement(
@@ -303,9 +321,8 @@ function Deck() {
                 {
                     columnClass: 'col-lg-6',
                     height: 440,
-                    heroImage: 'url(./app/assets/knight.jpg)',
-                    heroImagePadding: 400,
-                    title: 'Test'
+                    title: 'Test',
+                    backgroundColor: '#00A8E8'
                 },
                 React.createElement(Index, null)
             )
