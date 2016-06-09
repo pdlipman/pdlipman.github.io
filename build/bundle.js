@@ -14,7 +14,7 @@ module.exports=//expand: props.expand,
 [{
   "key": 1,
   "title": "About",
-  "content": "./app/components/card/content/about.md",
+  "content": "./app/assets/content/about.md",
   "heroImage": "",
   "heroImagePadding": 0,
   "backgroundColor": "#225378",
