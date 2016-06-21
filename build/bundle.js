@@ -13,13 +13,54 @@ module.exports=//expand: props.expand,
 
 [{
   "key": 1,
-  "title": "About",
+  "title": "philipLipman",
   "content": "./app/assets/content/about.md",
-  "heroImage": "",
-  "heroImagePadding": 0,
+  "heroImage": "url(./app/assets/octopus.jpg)",
+  "heroImagePadding": 300,
   "backgroundColor": "#225378",
   "columnClass": "col-lg-12",
-}]
+  "hideContent": false,
+  "height": 400,
+},
+  {
+    "key": 2,
+    "title": "Test 2",
+    "content": "./app/assets/content/about.md",
+    "heroImagePadding": 0,
+    "columnClass": "col-lg-6",
+    "hideContent": true,
+    "height": 300,
+  },
+  {
+    "key": 3,
+    "title": "Test 3",
+    "content": "./app/assets/content/about.md",
+    "heroImage": "url(./app/assets/knight.jpg)",
+    "heroImagePadding": 100,
+    "columnClass": "col-lg-6",
+    "hideContent": true,
+    "height": 300,
+  },
+  {
+    "key": 4,
+    "title": "Test 4",
+    "content": "./app/assets/content/about.md",
+    "heroImage": "url(./app/assets/knight.jpg)",
+    "heroImagePadding": 20,
+    "columnClass": "col-lg-6",
+    "hideContent": false,
+    "height": 300,
+  },
+  {
+    "key": 5,
+    "title": "Test 5",
+    "content": "./app/assets/content/about.md",
+    "heroImage": "url(./app/assets/octopus.jpg)",
+    "heroImagePadding": 200,
+    "columnClass": "col-lg-6",
+    "hideContent": false,
+    "height": 300,
+  }]
 },{}],2:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -77,8 +118,6 @@ class Card extends React.Component {
 
     handleExpand() {
         if (!this.state.expand) {
-            var refCard = this.refs.card;
-            var node = ReactDOM.findDOMNode(refCard);
             var getScreenTop = jQuery(window).scrollTop();
             console.log(getScreenTop);
             this.setState({
@@ -91,15 +130,8 @@ class Card extends React.Component {
 
     handleContract() {
         if (this.state.expand) {
-            var refCard = this.refs.card;
-            var node = ReactDOM.findDOMNode(refCard);
             var getScreenTop = this.state.screenTop;
-
             jQuery("html, body").animate({ scrollTop: getScreenTop }, "slow");
-            //jQuery("html, body").animate({scrollTop: node.getBoundingClientRect().top}, "slow");
-            //jQuery(node).find('.card-content').animate({scrollTop: node.getBoundingClientRect().top}, "fast");
-            console.log(getScreenTop);
-            console.log(this.state.dy);
 
             this.setState({
                 expand: false
@@ -115,9 +147,12 @@ class Card extends React.Component {
         };
 
         var contentHideClass = this.props.hideContent ? 'card-interior card-interior-fade' : 'card-interior';
+        console.info(contentHideClass);
 
         var classes = this.state.expand ? 'card-start card-end ' // + this.state.columnClass
         : 'card-start '; // + this.state.columnClass;
+
+        var hoverHelper = !this.state.expand && this.props.heroImagePadding > 20 && !this.props.hideContent ? 'hover-helper-main-card' : '';
 
         var heroImage = this.props.heroImage ? this.props.heroImage : '';
 
@@ -135,7 +170,8 @@ class Card extends React.Component {
                 left: this.state.dx,
                 top: this.state.dy,
                 width: this.state.expandedWidth,
-                height: this.state.expandedHeight
+                height: this.state.expandedHeight,
+                transition: '0.8s'
             };
 
             closeStyle = {};
@@ -167,12 +203,12 @@ class Card extends React.Component {
                     React.createElement(
                         'div',
                         {
-                            className: "main-card",
+                            className: "main-card " + hoverHelper,
                             style: { paddingTop: this.props.heroImagePadding } },
                         React.createElement(
                             'div',
                             {
-                                className: 'cover-heading',
+                                className: "cover-heading " + hoverHelper,
                                 style: titlePadding },
                             React.createElement(
                                 'h3',
@@ -291,13 +327,16 @@ class Deck extends React.Component {
                     title: card.title,
                     backgroundColor: card.backgroundColor,
                     columnClass: card.columnClass,
+                    height: card.height,
                     heroImage: card.heroImage,
-                    heroImagePadding: card.heroImagePadding
+                    heroImagePadding: card.heroImagePadding,
+                    hideContent: card.hideContent
                 },
                 React.createElement(
                     Markdown,
                     {
                         options: {
+                            html: true,
                             highlight: function (str, lang) {
                                 if (lang && hljs.getLanguage(lang)) {
                                     try {
@@ -320,13 +359,7 @@ class Deck extends React.Component {
         return React.createElement(
             'div',
             {
-                className: "row"
-            },
-            React.createElement(
-                'h1',
-                { style: { color: "#ECF0F1" } },
-                'Hey Now'
-            ),
+                className: "row" },
             cards
         );
     }
@@ -389,88 +422,7 @@ function Decks() {
         null,
         React.createElement(Deck, {
             items: cardContent
-        }),
-        React.createElement(
-            'div',
-            { className: 'row' },
-            React.createElement(
-                Card,
-                {
-                    columnClass: 'col-lg-12'
-                    //heroImage="url(./app/assets/profile.jpg)"
-                    //heroImagePadding={400}
-                    , title: 'About',
-                    backgroundColor: '#1695A3'
-                },
-                React.createElement(
-                    'div',
-                    null,
-                    React.createElement(
-                        'p',
-                        { className: 'lead' },
-                        'Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.'
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'lead' },
-                        React.createElement(
-                            'a',
-                            { href: '#', className: 'btn btn-lg btn-secondary' },
-                            'Learn more'
-                        )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'container' },
-                        'Card 0'
-                    )
-                )
-            ),
-            React.createElement(
-                Card,
-                {
-                    columnClass: 'col-lg-6',
-                    height: 440,
-                    heroImage: 'url(./app/assets/octopus.jpg)',
-                    heroImagePadding: 200,
-                    title: 'Index',
-                    backgroundColor: '#3498DB',
-                    hideContent: true },
-                React.createElement(
-                    'h4',
-                    null,
-                    'Interior Crocidile aliagator, i drive a chevrolet movie theatre'
-                ),
-                React.createElement(Index, null)
-            ),
-            React.createElement(
-                Card,
-                {
-                    columnClass: 'col-lg-6',
-                    height: 440,
-                    title: 'Test',
-                    backgroundColor: '#2980B9' },
-                React.createElement(Index, null)
-            ),
-            React.createElement(
-                Card,
-                {
-                    columnClass: 'col-lg-6',
-                    height: 440,
-                    title: 'Test',
-                    backgroundColor: '#E74C3C' },
-                React.createElement(Index, null)
-            ),
-            React.createElement(
-                Card,
-                {
-                    columnClass: 'col-lg-6',
-                    height: 440,
-                    title: 'Test',
-                    backgroundColor: '#2C3E50' },
-                React.createElement(Index, null)
-            )
-        )
+        })
     );
 }
 
