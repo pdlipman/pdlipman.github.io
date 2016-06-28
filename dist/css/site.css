@@ -6830,20 +6830,29 @@ html, body {
   -o-perspective: 500;
   width: 100%;
   cursor: pointer;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s; }
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
 
 .card-content {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: box-shadow 0.4s;
+  -moz-transition: box-shadow 0.4s;
+  -ms-transition: box-shadow 0.4s;
+  -o-transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s;
+  border: 2px solid lightgray;
   position: relative;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  overflow: hidden; }
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.card-content:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .card-background-image {
   z-index: -1;
@@ -6854,32 +6863,15 @@ html, body {
   left: 0px; }
 
 .card-start .card-background-image {
-  opacity: 1;
-  -webkit-transition: opacity 0.4s ease-in;
-  -moz-transition: opacity 0.4s ease-in;
-  -o-transition: opacity 0.4s ease-in;
-  -ms-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in; }
+  opacity: 1; }
 
 .card-end .card-background-image {
-  opacity: 1;
-  -webkit-transition: opacity 0.4s ease-in;
-  -moz-transition: opacity 0.4s ease-in;
-  -o-transition: opacity 0.4s ease-in;
-  -ms-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in; }
+  opacity: 1; }
 
 .card-interior {
   width: 100%;
   min-height: 100%;
   padding-top: 15px;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s; }
-
-.hover-helper-main-card, .hover-helper-main-card .cover-heading {
   -webkit-transition: 0.8s;
   -moz-transition: 0.8s;
   -ms-transition: 0.8s;
@@ -6918,14 +6910,14 @@ html, body {
   left: 0;
   position: absolute;
   width: 100%;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s; }
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
 
 .card-end .card-content {
-  overflow: scroll;
+  overflow-y: auto;
   cursor: default; }
 
 .card-close {
@@ -6935,11 +6927,6 @@ html, body {
 .card-close .fa {
   cursor: pointer;
   font-size: 1.75rem;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  -ms-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
   z-index: 1; }
 
 .card-close .fa:hover {
@@ -6949,13 +6936,13 @@ html, body {
   -ms-transform: scale(1.4);
   transform: scale(1.4); }
 
-.card-holder h3 {
+.cover-heading div {
   padding: 15px 10px 10px 40px;
-  background-color: #EB7F00;
-  z-index: 999;
-  /* If we weren't using text-shadow, we'd set a fallback color
-     and use this to set color instead
-    -webkit-text-fill-color: white; */ }
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; }
+
+.card-holder h3 {
+  opacity: 1.0; }
 
 .card-holder h3 .fa {
   background-color: transparent; }
