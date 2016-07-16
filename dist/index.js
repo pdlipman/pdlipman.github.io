@@ -16,32 +16,33 @@ module.exports=//expand: props.expand,
     "key": 1,
     "title": "philipLipman",
     "content": "./app/assets/content/about.md",
-    "heroImage": "url(./app/assets/octopus.jpg)",
+    "heroImage": "url(./app/assets/background6.jpg)",
     "heroImagePadding": 200,
-    "backgroundColor": "rgba(52, 152, 219, 0.95)",
+    "backgroundColor": "rgba(52, 152, 219, .99)",
+    "backgroundSize": "100%",
     "columnClass": "col-lg-12",
     "hideContent": false,
     "height": 300,
   },
-  //  {
-  //    "key": 2,
-  //    "title": "Test 2",
-  //    "heroImagePadding": 0,
-  //    "backgroundColor": "rgb(41, 128, 185)",
-  //    "columnClass": "col-lg-6",
-  //    "hideContent": false,
-  //    "height": 300,
-  //  },
-  //  {
-  //    "key": 3,
-  //    "title": "Test 3",
-  //    "heroImage": "url(./app/assets/knight.jpg)",
-  //    "heroImagePadding": 100,
-  //    "backgroundColor": "rgba(41, 128, 185, 0.95)",
-  //    "columnClass": "col-lg-6",
-  //    "hideContent": true,
-  //    "height": 300,
-  //  },
+    {
+      "key": 2,
+      "title": "Test 2",
+      "heroImagePadding": 0,
+      "backgroundColor": "rgba(41, 128, 185, 0.9)",
+      "columnClass": "col-lg-6",
+      "hideContent": false,
+      "height": 400,
+    },
+    {
+      "key": 3,
+      "title": "Test 3",
+      "heroImage": "url(./app/assets/knight.jpg)",
+      "heroImagePadding": 100,
+      "backgroundColor": "rgba(41, 128, 185, 0.95)",
+      "columnClass": "col-lg-6",
+      "hideContent": true,
+      "height": 400,
+    },
   {
     "key": 4,
     "title": "React",
@@ -74,6 +75,7 @@ class Card extends React.Component {
         this.state = {
             title: props.title,
             backgroundColor: props.backgroundColor,
+            backgroundSize: props.backgroundSize,
             heroImage: props.heroImage,
             heroImagePadding: props.heroImagePadding,
             columnClass: props.columnClass,
@@ -199,7 +201,7 @@ class Card extends React.Component {
                         style: {
                             backgroundImage: heroImage,
                             backgroundRepeat: "no-repeat",
-                            backgroundSize: "100%",
+                            backgroundSize: this.props.backgroundSize,
                             backgroundColor: this.props.backgroundColor } }),
                     React.createElement(
                         'div',
@@ -249,21 +251,10 @@ class Card extends React.Component {
     }
 }
 
-//title: props.title,
-//    backgroundColor: props.backgroundColor,
-//    heroImage: props.heroImage,
-//    heroImagePadding: props.heroImagePadding,
-//    columnClass: props.columnClass,
-//    height: props.height,
-//    expand: props.expand,
-//    dx: props.dx,
-//    dy: props.dy,
-//    expandedWidth: props.expandedWidth,
-//    expandedHeight: props.expandedHeight,
-
 Card.propTypes = {
     title: React.PropTypes.string,
     backgroundColor: React.PropTypes.string,
+    backgroundSize: React.PropTypes.string,
     heroImage: React.PropTypes.string,
     heroImagePadding: React.PropTypes.number,
     columnClass: React.PropTypes.string,
@@ -280,6 +271,7 @@ Card.propTypes = {
 Card.defaultProps = {
     title: '',
     backgroundColor: '#2980B9', //2980B9
+    backgroundSize: 'cover',
     heroImage: '',
     heroImagePadding: 0,
     columnClass: "col-sm-4",
@@ -327,6 +319,7 @@ class Deck extends React.Component {
                     key: card.key,
                     title: card.title,
                     backgroundColor: card.backgroundColor,
+                    backgroundSize: card.backgroundSize,
                     columnClass: card.columnClass,
                     height: card.height,
                     heroImage: card.heroImage,
@@ -454,7 +447,6 @@ ReactDOM.render(React.createElement(
         Route,
         { path: '/', component: App },
         React.createElement(IndexRoute, { component: Decks }),
-        React.createElement(Route, { path: 'game', component: Game }),
         React.createElement(Route, { path: '*', component: Decks })
     )
 ), document.getElementById('content'));

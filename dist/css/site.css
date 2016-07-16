@@ -6781,7 +6781,36 @@ html, body {
   margin-right: auto;
   margin-left: auto; }
 
-.main-header, .main-footer {
+.main-footer {
+  display: table;
+  width: 100%;
+  color: #f2ede3;
+  font-size: 2em;
+  background-color: #374140;
+  height: 2em; }
+
+.footer-content {
+  padding: 20px 0px; }
+
+.footer-content .fa {
+  font-size: 1.5em;
+  padding-right: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+
+.main-footer .fa:hover {
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4); }
+
+.bottom-footer {
+  background-color: #1E1E20;
+  height: 2em;
   padding: 10px 10px; }
 
 .main-transition-enter {
@@ -6823,11 +6852,11 @@ html, body {
   position: absolute;
   top: 0px;
   left: 0px;
-  perspective: 500;
-  -webkit-perspective: 500;
-  -moz-perspective: 500;
-  -ms-perspective: 500;
-  -o-perspective: 500;
+  perspective: 500px;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  -o-perspective: 500px;
   width: 100%;
   cursor: pointer;
   -webkit-transition: 1s;
@@ -6837,11 +6866,11 @@ html, body {
   transition: 1s; }
 
 .card-content {
-  -webkit-transition: box-shadow 0.4s;
-  -moz-transition: box-shadow 0.4s;
-  -ms-transition: box-shadow 0.4s;
-  -o-transition: box-shadow 0.4s;
-  transition: box-shadow 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
   border: 2px solid lightgray;
   position: relative;
   width: 100%;
@@ -6852,6 +6881,7 @@ html, body {
   text-overflow: ellipsis; }
 
 .card-content:hover {
+  border: 2px solid #adadad;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .card-background-image {
@@ -6917,7 +6947,7 @@ html, body {
   transition: 1s; }
 
 .card-end .card-content {
-  overflow-y: auto;
+  overflow-y: hidden;
   cursor: default; }
 
 .card-close {
@@ -6927,6 +6957,11 @@ html, body {
 .card-close .fa {
   cursor: pointer;
   font-size: 1.75rem;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
   z-index: 1; }
 
 .card-close .fa:hover {
@@ -6982,6 +7017,13 @@ html, body {
   padding: 0.5em;
   background: #333;
   color: white; }
+
+.btn {
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s; }
 
 /*!
  * Agate by Taufik Nurrohman <https://github.com/tovic>
