@@ -10,7 +10,7 @@ module.exports=
     "heroImagePadding": 210,
     "backgroundColor": "rgba(52, 152, 219, .99)",
     "backgroundSize": "100%",
-    "columnClass": "col-sm-12",
+    "columnClass": "col-lg-12",
     "hideContent": false,
     "height": 400,
   },
@@ -20,7 +20,7 @@ module.exports=
       "content": "./app/assets/content/react-cards-summary.md",
       "heroImage": "url(./app/assets/background2.jpg)",
       "heroImagePadding": 320,
-      "columnClass": "col-sm-4",
+      "columnClass": "col-lg-4",
       "hideContent": false,
       "height": 400,
       "backgroundColor": "rgba(0, 163, 136, 0.9)",
@@ -30,7 +30,7 @@ module.exports=
     "title": "npm Scripts",
     "content": "./app/assets/content/npm-build-scripts.md",
     "backgroundColor": "rgba(41, 128, 185, 0.7)",
-    "columnClass": "col-sm-4",
+    "columnClass": "col-lg-4",
     "hideContent": true,
     "height": 400,
 
@@ -41,7 +41,7 @@ module.exports=
       "content": "./app/assets/content/preview-gallery.md",
 
       "heroImage": "url(./app/assets/octopus.jpg)",
-      "columnClass": "col-sm-4",
+      "columnClass": "col-lg-4",
       "hideContent": true,
       "height": 400,
       "backgroundColor": "rgba(231, 76, 60, 0.9)",
@@ -400,16 +400,17 @@ class MarkdownPage extends React.Component {
     }
 
     loadMarkdownFromServer() {
-        if (this.props.url) {
+        var that = this;
+        if (that.props.url) {
             jQuery.ajax({
                 'type': 'GET',
-                'url': this.props.url,
+                'url': that.props.url,
                 'async': false,
-                'success': data => {
-                    this.setState({ data: data });
+                'success': function (data) {
+                    that.setState({ data: data });
                 },
-                'error': (xhr, status, err) => {
-                    console.error(this.props.url, status, err.toString());
+                'error': function (xhr, status, err) {
+                    console.error(that.props.url, status, err.toString());
                 }
             });
         }
