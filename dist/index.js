@@ -16,33 +16,35 @@ module.exports=
   },
     {
       "key": 2,
-      "title": "Jugo and I",
-      "heroImage": "url(./app/assets/profile.jpg)",
-      "columnClass": "col-lg-4",
+      "title": "React Cards",
+      "content": "./app/assets/content/react-cards-summary.md",
+      "heroImage": "url(./app/assets/background2.jpg)",
+      "heroImagePadding": 520,
+      "columnClass": "col-lg-6",
       "hideContent": false,
-      "height": 300,
-      "hideContent": true,
-      "backgroundColor": "rgba(0, 163, 136, 0.4)",
+      "height": 600,
+      "backgroundColor": "rgba(0, 163, 136, 0.9)",
     },
-  {
-    "key": 6,
-    "heroImage": "url(./app/assets/octopus.jpg)",
-    "title": "Octopus",
-    "heroImagePadding": 0,
-    "backgroundColor": "rgba(41, 128, 185, 0.8)",
-    "columnClass": "col-lg-4",
-    "hideContent": false,
-    "height": 300,
-
-  },
+//  {
+//    "key": 6,
+//    "heroImage": "url(./app/assets/octopus.jpg)",
+//    "title": "Octopus",
+//    "heroImagePadding": 0,
+//    "backgroundColor": "rgba(41, 128, 185, 0.8)",
+//    "columnClass": "col-lg-4",
+//    "hideContent": false,
+//    "height": 300,
+//
+//  },
     {
       "key": 4,
-      "title": "Knight",
-      "heroImage": "url(./app/assets/knight.jpg)",
-      "heroImagePadding": 220,
-      "columnClass": "col-lg-4",
-      "hideContent": false,
-      "height": 300,
+      "title": "Preview Gallery",
+      "content": "./app/assets/content/preview-gallery.md",
+
+      "heroImage": "url(./app/assets/octopus.jpg)",
+      "columnClass": "col-lg-6",
+      "hideContent": true,
+      "height": 600,
       "backgroundColor": "rgba(231, 76, 60, 0.9)",
     },
 //  {
@@ -467,6 +469,7 @@ var cardContent = require('./assets/content/card-content.json');
 var MarkdownPage = require('./components/markdownpage/MarkdownPage.jsx');
 
 var resumeMarkdown = './app/assets/content/resume.md';
+var reactCardMarkdown = './app/assets/content/react-cards.md';
 
 global.jQuery = require('jquery');
 
@@ -506,13 +509,22 @@ function Decks() {
 
 class ResumePage extends React.Component {
     render() {
-        console.log(resumeMarkdown);
-
         return React.createElement(
             'div',
             { className: 'container' },
             React.createElement(MarkdownPage, {
                 url: resumeMarkdown })
+        );
+    }
+}
+
+class ReactCardsPage extends React.Component {
+    render() {
+        return React.createElement(
+            'div',
+            { className: 'container' },
+            React.createElement(MarkdownPage, {
+                url: reactCardMarkdown })
         );
     }
 }
@@ -531,6 +543,7 @@ ReactDOM.render(React.createElement(
         { path: '/', component: App },
         React.createElement(IndexRoute, { component: Decks }),
         React.createElement(Route, { path: 'resume', component: ResumePage }),
+        React.createElement(Route, { path: 'react-cards', component: ReactCardsPage }),
         React.createElement(Route, { path: '*', component: Decks })
     )
 ), document.getElementById('content'));

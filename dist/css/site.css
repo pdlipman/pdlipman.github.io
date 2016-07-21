@@ -6812,7 +6812,7 @@ a:hover.footer-content {
   -ms-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
-.fa-resume {
+.fa-resume, .fa-page-link {
   padding: 20px; }
 
 .footer-content a {
@@ -7031,7 +7031,7 @@ a:hover.footer-content {
   -o-transition: 0.8s;
   transition: 0.8s; }
 
-.main-card pre code {
+pre code {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
