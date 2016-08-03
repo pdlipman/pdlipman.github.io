@@ -1,7 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports=
-
-[
+module.exports=[
   {
     "key": 1,
     "title": "philipLipman",
@@ -14,77 +12,84 @@ module.exports=
     "hideContent": false,
     "height": 400,
   },
-    {
-      "key": 2,
-      "title": "React Cards",
-      "content": "./app/assets/content/react-cards-summary.md",
-      "heroImage": "url(./app/assets/background2.jpg)",
-      "heroImagePadding": 320,
-      "columnClass": "col-lg-4",
-      "hideContent": false,
-      "height": 400,
-      "backgroundColor": "rgba(0, 163, 136, 0.9)",
-    },
+  {
+    "key": 2,
+    "title": "React Cards",
+    "content": "./app/assets/content/react-cards.md",
+    "heroImage": "url(./app/assets/background2.jpg)",
+    "heroImagePadding": 320,
+    "columnClass": "col-lg-3",
+    "hideContent": false,
+    "height": 300,
+    "backgroundColor": "rgba(0, 163, 136, 0.9)",
+  },
   {
     "key": 6,
     "title": "npm Scripts",
     "content": "./app/assets/content/npm-build-scripts.md",
     "backgroundColor": "rgba(41, 128, 185, 0.7)",
-    "columnClass": "col-lg-4",
-    "hideContent": true,
-    "height": 400,
-
+    "columnClass": "col-lg-3",
+    "height": 300,
   },
-    {
-      "key": 4,
-      "title": "Preview Gallery",
-      "content": "./app/assets/content/preview-gallery.md",
-
-      "heroImage": "url(./app/assets/octopus.jpg)",
-      "columnClass": "col-lg-4",
-      "hideContent": true,
-      "height": 400,
-      "backgroundColor": "rgba(231, 76, 60, 0.9)",
-    },
-//  {
-//    "key": 2,
-//    "title": "Test 2",
-//    "heroImagePadding": 0,
-//    "backgroundColor": "rgba(41, 128, 185, 0.9)",
-//    "columnClass": "col-lg-6",
-//    "hideContent": false,
-//    "height": 400,
-//  },
-//  {
-//    "key": 3,
-//    "title": "Test 3",
-//    "heroImage": "url(./app/assets/knight.jpg)",
-//    "heroImagePadding": 100,
-//    "backgroundColor": "rgba(41, 128, 185, 0.95)",
-//    "columnClass": "col-lg-6",
-//    "hideContent": true,
-//    "height": 400,
-//  },
-//  {
-//    "key": 4,
-//    "title": "React",
-//    "heroImage": "url(./app/assets/knight.jpg)",
-//    "heroImagePadding": 300,
-//    "columnClass": "col-lg-6",
-//    "hideContent": false,
-//    "height": 400,
-//    "backgroundColor": "rgba(231, 76, 60, 0.9)",
-//  },
-//  {
-//    "key": 5,
-//    "title": "Phaser",
-//    "heroImage": "url(./app/assets/octopus.jpg)",
-//    "heroImagePadding": 300,
-//    "columnClass": "col-lg-6",
-//    "hideContent": false,
-//    "height": 400,
-//    "backgroundColor": "rgba(0, 163, 136, 0.95)",
-//  }
+  {
+    "key": 4,
+    "title": "Preview Gallery",
+    "content": "./app/assets/content/preview-gallery.md",
+    "heroImage": "url(./app/assets/octopus.jpg)",
+    "columnClass": "col-lg-3",
+    "hideContent": true,
+    "height": 300,
+    "backgroundColor": "rgba(231, 76, 60, 0.9)",
+  },
+  {
+    "key": 5,
+    "title": "Resume",
+    "heroImage": "url(./app/assets/6152-11.jpg)",
+    "content": "./app/assets/content/resume.md",
+    "columnClass": "col-lg-3",
+    "hideContent": false,
+    "height": 300,
+    "backgroundColor": "rgba(0, 163, 136, 0.85)",
+  },
+  //  {
+  //    "key": 2,
+  //    "title": "Test 2",
+  //    "heroImagePadding": 0,
+  //    "backgroundColor": "rgba(41, 128, 185, 0.9)",
+  //    "columnClass": "col-lg-6",
+  //    "hideContent": false,
+  //    "height": 400,
+  //  },
+  //  {
+  //    "key": 3,
+  //    "title": "Test 3",
+  //    "heroImage": "url(./app/assets/knight.jpg)",
+  //    "heroImagePadding": 100,
+  //    "backgroundColor": "rgba(41, 128, 185, 0.95)",
+  //    "columnClass": "col-lg-6",
+  //    "hideContent": true,
+  //    "height": 400,
+  //  },
+  //  {
+  //    "key": 4,
+  //    "title": "React",
+  //    "heroImage": "url(./app/assets/knight.jpg)",
+  //    "heroImagePadding": 300,
+  //    "columnClass": "col-lg-6",
+  //    "hideContent": false,
+  //    "height": 400,
+  //    "backgroundColor": "rgba(231, 76, 60, 0.9)",
+  //  },
+  //  {
+  //    "key": 5,
+  //    "title": "Phaser",
+  //    "heroImage": "url(./app/assets/octopus.jpg)",
+  //    "heroImagePadding": 300,
+  //    "columnClass": "col-lg-6",
+  //    "hideContent": false,
+  //    "height": 400,
+  //    "backgroundColor": "rgba(0, 163, 136, 0.95)",
+  //  }
 ]
 },{}],2:[function(require,module,exports){
 var React = require('react');
@@ -107,7 +112,10 @@ class Card extends React.Component {
             expandedWidth: props.expandedWidth,
             expandedHeight: props.expandedHeight,
             hideContent: props.hideContent,
-            screenTop: props.screenTop
+            screenTop: props.screenTop,
+            activeFunction: props.activeFunction,
+            active: props.active,
+            id: props.id
         };
 
         this.handleExpand = this.handleExpand.bind(this);
@@ -118,6 +126,9 @@ class Card extends React.Component {
     componentDidMount() {
         this.setPosition();
         window.addEventListener('resize', this.setPosition);
+        if (this.props.active) {
+            this.handleExpand();
+        }
     }
 
     componentWillUnmount() {
@@ -143,6 +154,8 @@ class Card extends React.Component {
     }
 
     handleExpand() {
+        this.props.activeFunction(this.props.id);
+
         if (!this.state.expand) {
             var getScreenTop = jQuery(window).scrollTop();
             this.setState({
@@ -154,6 +167,8 @@ class Card extends React.Component {
     }
 
     handleContract() {
+        this.props.activeFunction(-1);
+
         if (this.state.expand) {
             var getScreenTop = this.state.screenTop;
             jQuery("html, body").animate({ scrollTop: getScreenTop }, "slow");
@@ -166,7 +181,7 @@ class Card extends React.Component {
 
     render() {
 
-        var titlePadding = this.props.height < this.props.heroImagePadding || this.props.hideContent ? { paddingTop: '10px' } : { paddingTop: this.props.heroImagePadding };
+        var titlePadding = this.props.height < this.props.heroImagePadding || this.props.hideContent ? { paddingTop: '0px' } : { paddingTop: this.props.heroImagePadding };
         var cardHolderStyle = {
             height: this.props.height
         };
@@ -216,14 +231,12 @@ class Card extends React.Component {
                 React.createElement(
                     'div',
                     {
-                        className: "card-content" },
-                    React.createElement('div', {
-                        className: 'card-background-image',
+                        className: "card-content",
                         style: {
                             backgroundImage: heroImage,
                             backgroundRepeat: "no-repeat",
                             backgroundSize: this.props.backgroundSize,
-                            backgroundColor: this.props.backgroundColor } }),
+                            backgroundColor: this.props.backgroundColor } },
                     React.createElement(
                         'div',
                         {
@@ -317,11 +330,21 @@ class Deck extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: props.items
+            items: props.items,
+            activeCardItemKey: props.activeCardItemKey
         };
+        this.setActiveCardItem = this.setActiveCardItem.bind(this);
+    }
+
+    setActiveCardItem(key) {
+        this.setState({
+            activeCardItemKey: key
+        });
+        console.log(key);
     }
 
     render() {
+        var currentActiveCardItemKey = this.state.activeCardItemKey;
         var cards = this.props.items.map(function (card) {
             var content = '';
             if (card.content) {
@@ -338,6 +361,7 @@ class Deck extends React.Component {
                 Card,
                 {
                     key: card.key,
+                    id: card.key,
                     title: card.title,
                     backgroundColor: card.backgroundColor,
                     backgroundSize: card.backgroundSize,
@@ -345,7 +369,9 @@ class Deck extends React.Component {
                     height: card.height,
                     heroImage: card.heroImage,
                     heroImagePadding: card.heroImagePadding,
-                    hideContent: card.hideContent
+                    hideContent: card.hideContent,
+                    active: currentActiveCardItemKey === card.key,
+                    activeFunction: this.setActiveCardItem
                 },
                 React.createElement(
                     Markdown,
@@ -382,7 +408,9 @@ class Deck extends React.Component {
 
 Deck.propTypes = {};
 
-Deck.defaultProps = {};
+Deck.defaultProps = {
+    activeCardItemKey: -1
+};
 
 module.exports = Deck;
 
@@ -497,16 +525,6 @@ class App extends React.Component {
     }
 }
 
-function Decks() {
-    return React.createElement(
-        'div',
-        null,
-        React.createElement(Deck, {
-            items: cardContent
-        })
-    );
-}
-
 class ResumePage extends React.Component {
     render() {
         return React.createElement(
@@ -535,16 +553,25 @@ var Game = new React.createClass({
     }
 });
 
+var wrapComponent = function (Component, props) {
+    console.log(props);
+    return React.createClass({
+        render: function () {
+            return React.createElement(Component, props);
+        }
+    });
+};
+
 ReactDOM.render(React.createElement(
     Router,
     { history: hashHistory },
     React.createElement(
         Route,
         { path: '/', component: App },
-        React.createElement(IndexRoute, { component: Decks }),
+        React.createElement(IndexRoute, { component: wrapComponent(Deck, { items: cardContent }) }),
         React.createElement(Route, { path: 'resume', component: ResumePage }),
         React.createElement(Route, { path: 'react-cards', component: ReactCardsPage }),
-        React.createElement(Route, { path: '*', component: Decks })
+        React.createElement(Route, { path: '*', component: Deck })
     )
 ), document.getElementById('content'));
 
